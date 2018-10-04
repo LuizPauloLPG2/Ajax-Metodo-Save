@@ -3,7 +3,7 @@
 require_once("./conexao.php");
 $nome = $_POST["nome_profissional"];
 $email = $_POST["email_profissional"];
-$sql = ("insert into tbprofissional (nome_profissional, login) values (upper(:nome), :email)");
+$sql = ("insert into tbprofissional (nome_profissional, email) values (upper(:nome), :email)");
 
 $stmt = Db::_conexao()->prepare($sql);
 $stmt->bindValue(":nome", $nome);
