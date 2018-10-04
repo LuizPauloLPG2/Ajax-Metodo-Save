@@ -26,7 +26,7 @@
                             <input class="form-control" name="email_profissional" type="text">
                         </div>
                         <div class="form-group col-md-12">
-                            <button type="submit" form="sendData" class="btn btn-success postCliente">CADASTRAR</button>
+                            <button type="submit" form="sendData" class="btn btn-success">CADASTRAR</button>
                         </div>
                     </div>
                 </form>
