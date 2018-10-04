@@ -33,6 +33,7 @@ $(document).ready(function () {
             } else {
                 html += "<div class='alert alert-danger' role='alert'>ERRO AO CADASTRAR PROFISSIONAL</div>";
                 erro.innerHTML = html;
+                return false;
             }
         });
     });
