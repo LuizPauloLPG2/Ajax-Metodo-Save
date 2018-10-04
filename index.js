@@ -4,6 +4,7 @@ $(document).ready(function () {
         var erro = document.querySelector("#erro");
         e.preventDefault();
         var form = $('#sendData')[0];
+        //PEGA DO FORM PARA VALIDAR
         var nome = form.nome_profissional.value;
         if (nome == "") {
             html = "<div class='alert alert-danger' role='alert'>CAMPO NOME REQUERIDO</div>";
@@ -11,6 +12,7 @@ $(document).ready(function () {
             return false;
         }
         var formData = new FormData(form);
+        //DEVOLVE PARA O FORM VALIDADO
         formData.set('nome_profissional', nome);
         $.ajax({
             url: "post.php",
