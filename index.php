@@ -13,67 +13,6 @@
             <div class="container border border-primary">
                 <h1><code>AJAX</code></h1>
             </div>
-            <br>
-            <table class="table table-sm table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>NOME</th>
-                        <th>EMAIL</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php require_once("./conexao.php"); ?>
-                    <?php
-                    $sql = ("select * from tbprofissional");
-                    $stmt = Db::_conexao()->prepare($sql);
-                    $stmt->execute();
-                    ?>
-                    <?php while ($row = $stmt->fetch()) { ?>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">DETALHES</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="container">
-                                        <div class="form-row">
-                                            <div class="form-group col-md-12">
-                                                <label>NOME</label>
-                                                <input class="form-control" type="text" id="nome_profissional">
-                                            </div>
-                                            <div class="form-group col-md-12">
-                                                <label>EMAIL</label>
-                                                <input class="form-control" type="email" id="email_profissional">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-sm btn-success">SALVAR ALTERAÇÕES</button>
-                                    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">CANCELAR</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <tr>
-                        <td><?php echo $row['id_profissional']; ?></td>
-                        <td><?php echo $row['nome_profissional']; ?></td>
-                        <td><?php echo $row['login']; ?></td>
-                        <td>
-                            <button data-id="<?php echo $row['id_profissional']; ?>" type="button" class="btn btn-outline-primary btn-sm setIdCliente" data-toggle="modal" data-target="#exampleModal">
-                                Detalhes
-                            </button>
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
             <hr class="border border-primary">
             <div class="container">
                 <form method="post" id="sendData">
